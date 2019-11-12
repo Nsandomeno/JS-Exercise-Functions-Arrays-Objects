@@ -227,7 +227,7 @@ function sortCarInventory(inventory) {
 function getModelYears(inventory) {
   /* code here */
   let yearArray = [];
-  for (let i = 0; i <= inventory.length - 1; i++){
+  for (let i = 0; i < inventory.length; i++){
     yearArray.push(inventory[i].car_year);
   }
   return yearArray;
@@ -297,7 +297,7 @@ function getGermanCars(inventory) {
  * }
 */
 const sum = (a, b) => {
-  return a * b;
+  return a + b;
 } // code here! 
 const addFive = (num) => {
   return num + 5;
@@ -319,14 +319,14 @@ const argTimesTwo = (num) => {
  *         (1) causes the odometer in the object to be increased by the distance,
  *         (2) returns the updated value of the `odometer`.
 */
-function carMaker(number) {
+function carMaker(odometer) {
   /* code here */
-  var originalMiles = number;
   var obj = {
-    odometer: originalMiles,
+    odometer: odometer,
     drive: function(distance){
-      var originalMiles = distance + number;
-      return originalMiles;
+      console.log(obj.odometer);
+      this.odometer = this.odometer + distance;
+      return this.odometer;
     }
   }
   
